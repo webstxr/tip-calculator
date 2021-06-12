@@ -1,7 +1,7 @@
 import tkinter
-from tkinter import ttk
 
 
+# function to calculate the tip
 def tips(bill, tip):
     try:
         user_amount = float(bill.get())
@@ -10,17 +10,19 @@ def tips(bill, tip):
         result_label.config(text=tip_value)
 
     except ValueError:
-        print("Value Error")
+        result_label.config(text='Try again')
+
 
 # creating a window
 root = tkinter.Tk()
 root.title('Tip Calculator')
 root.geometry("350x300")
+root.resizable(width=False, height=False)
 root.configure(background="#fde2e4")
 
 # header with title
-header = tkinter.Label(root, text="Tip calculator - Calculate your tips!", bg="#fde2e4", pady=20)
-header.config(font=('Poppins', 20))
+header = tkinter.Label(root, text="Calculate your tips!", bg="#fde2e4", pady=20, fg="#ff91b9")
+header.config(font=('Nexa bold', 20))
 header.pack()
 
 # the bill space
@@ -42,10 +44,14 @@ tip_amount.place(relx=0.27, rely=0.5)
 
 
 # button
-button = tkinter.Button(width=15, height=2, bg="#003B73", text="Calculate", command=lambda: tips(amount, tip_amount))
-button.place(relx=0.31, rely=0.7)
+button = tkinter.Button(width=12, height=3,
+                        highlightbackground="#ffafcc",
+                        text="Calculate", fg="#ff79aa",
+                        command=lambda: tips(amount, tip_amount))
+button.place(relx=0.31, rely=0.65)
+button.config(font=('Nexa bold', 16))
 
-# space for a result
+# space for the result display
 result_label = tkinter.Label(root, bg="#fde2e4", bd=2, width=10)
 result_label.place(relx=0.35, rely=0.85)
 
