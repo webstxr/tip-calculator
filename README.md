@@ -27,3 +27,5 @@ pyinstaller --onefile tip_calculator.py
 
 # Appearance
 ![alt text](/readme/appearance.gif)
+
+Icon made by Flat Icons from www.flaticon.com
