@@ -22,10 +22,11 @@ python3 setup.py py2app
 ```
 ### Windows
 ```python
-pyinstaller --onefile tip_calculator.py
+pyinstaller --onefile tip_calculatorWINDOWS.py
 ```
 
 # Appearance
 ![alt text](/readme/appearance.gif)
+The appearance can be slightly different for Windows users.
 
 Icon made by Flat Icons from www.flaticon.com
