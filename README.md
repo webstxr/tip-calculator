@@ -1,4 +1,4 @@
-# ![GitHub Logo](logo.jpg) Tip Calculator
+# ![GitHub Logo](/readme/logo.jpg) Tip Calculator
 Simple app to calculate the tip made with Python tkinter
 
 # Requirements
