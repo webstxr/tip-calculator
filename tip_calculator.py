@@ -1,24 +1,25 @@
 import tkinter
-from tkinter import Text
-import os
+from tkinter import ttk
 
-def tips(amount, tip):
+
+def tips(bill, tip):
     try:
-        user_amount = float(amount)
-        user_tip = int(tip)
-        tip_value = amount * (tip/100)
-        print("Your tip value is:", round(tip_value, 2))
+        user_amount = float(bill.get())
+        user_tip = int(tip.get())
+        tip_value = round(user_amount * (user_tip/100), 2)
+        result_label.config(text=tip_value)
 
     except ValueError:
-        pass
+        print("Value Error")
 
 # creating a window
 root = tkinter.Tk()
 root.title('Tip Calculator')
-# root.iconbitmap('Users/webster/python projects/tip-calculator/tip.png')
+root.iconbitmap('Users/webster/python projects/tip-calculator/tip.png')
 root.geometry("350x300")
 root.configure(background="#fde2e4")
 
+# header with title
 header = tkinter.Label(root, text="Tip calculator - Calculate your tips!", bg="#fde2e4", pady=20)
 header.config(font=('Poppins', 20))
 header.pack()
@@ -27,6 +28,7 @@ header.pack()
 amount_label = tkinter.Label(root, text="Bill: ", bg="#fde2e4")
 amount_label.place(relx=0.15, rely=0.3)
 
+amount = tkinter.StringVar()
 amount = tkinter.Entry(root, bg="white", bd=1)
 amount.place(relx=0.27, rely=0.3)
 
@@ -35,13 +37,17 @@ amount.place(relx=0.27, rely=0.3)
 tip_label = tkinter.Label(root, text="Tip%:", bg="#fde2e4")
 tip_label.place(relx=0.15, rely=0.5)
 
+tip_amount = tkinter.IntVar()
 tip_amount = tkinter.Entry(root, bg="white", bd=1)
 tip_amount.place(relx=0.27, rely=0.5)
 
-# command=tips(int_amount, int_tip)
 
 # button
-button = tkinter.Button(width=15, height=2, bg="#eae4e9", text="Calculate",)
-button.place(relx=0.31, rely=0.75)
-root.mainloop()
+button = tkinter.Button(width=15, height=2, bg="#003B73", text="Calculate", command=lambda: tips(amount, tip_amount))
+button.place(relx=0.31, rely=0.7)
 
+# space for a result
+result_label = tkinter.Label(root, bg="#fde2e4", bd=2, width=10)
+result_label.place(relx=0.35, rely=0.85)
+
+root.mainloop()
