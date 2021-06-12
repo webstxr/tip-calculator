@@ -15,7 +15,6 @@ def tips(bill, tip):
 # creating a window
 root = tkinter.Tk()
 root.title('Tip Calculator')
-root.iconbitmap('Users/webster/python projects/tip-calculator/tip.png')
 root.geometry("350x300")
 root.configure(background="#fde2e4")
 
