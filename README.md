@@ -26,5 +26,4 @@ pyinstaller --onefile tip_calculator.py
 ```
 
 # Appearance
-Inline-style: 
 ![alt text](/readme/appearance.gif)
